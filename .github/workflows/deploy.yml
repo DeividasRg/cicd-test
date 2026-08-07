@@ -28,7 +28,7 @@ jobs:
           authkey: ${{ secrets.TS_AUTHKEY }}
       - name: Deploy to k3s
         run: |
-          echo "${{ secrets.KUBECONFIG }}" | base64 -d > KUBECONFIG
+          echo "${{ secrets.KUBECONFIG }}" | base64 -d > kubeconfig
           export KUBECONFIG=$PWD/kubeconfig
           sed "s|:manual-test|:${{ github.sha }}|" k8s/deployment.yml | kubectl apply -f -
           kubectl apply -f k8s/service.yml -f k8s/ingress.yml
