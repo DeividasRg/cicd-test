@@ -1,20 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cicd-test
+  name: cicd-test-one
   namespace: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: cicd-test
+      app: cicd-test-one
   template:
     metadata:
       labels:
-        app: cicd-test
+        app: cicd-test-one
     spec:
       containers:
-        - name: cicd-test
+        - name: cicd-test-one
           image: deividasrg/cicd-test:manual-test
           ports:
             - containerPort: 3000
+          env:
+            - name: BRAND
+              value: one

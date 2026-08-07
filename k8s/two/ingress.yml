@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: cicd-test
+  name: cicd-test-two
   namespace: dev
 spec:
   ingressClassName: traefik
   rules:
-    - host: cicd-test.dragauskas.lt
+    - host: cicd-test-two.dragauskas.lt
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: cicd-test
+                name: cicd-test-two
                 port:
                   number: 80

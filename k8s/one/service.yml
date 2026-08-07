@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cicd-test
+  name: cicd-test-one
   namespace: dev
 spec:
   selector:
-    app: cicd-test
+    app: cicd-test-one
   ports:
     - port: 80
       targetPort: 3000

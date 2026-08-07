@@ -9,7 +9,9 @@ export default function Home() {
       <p>
         Served by pod: <strong>{os.hostname()}</strong>
       </p>
-      <p>Changes</p>
+      <p>
+        Brand: <strong>{process.env.BRAND ?? "none"}</strong>
+      </p>
     </main>
   );
 }
