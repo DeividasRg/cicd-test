@@ -5,6 +5,10 @@ metadata:
   namespace: dev
 spec:
   ingressClassName: traefik
+  tls:
+    - hosts:
+        - cicd-test-one.dragauskas.lt
+      secretName: wildcard-dragauskas-tls
   rules:
     - host: cicd-test-one.dragauskas.lt
       http:
